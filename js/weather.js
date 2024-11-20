@@ -4,9 +4,8 @@ async function ApiGetWeather(prefix){
     if (!APIresponse.ok) {
       throw new Error("API get Error! StatusCode:${APIresponse.status}");
     }
-
     const data = await APIresponse.json();
-    return data[0];
+    return data;
   }catch (error) {
     // 捕获错误并打印到控制台
     console.error("Error fetching weather data:", error.message);
@@ -27,4 +26,4 @@ async function ApiGetWeather(prefix){
 // testBtn.addEventListener('click',()=>{
 //   addPLabel("week-info",'p');
 // });
-console.log(ApiGetWeather("Kluang"));
+// console.log(ApiGetWeather("Kluang"));

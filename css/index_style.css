@@ -1,0 +1,105 @@
+.weather-container {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 450;
+  font-style: normal;
+}
+
+.weather-container {
+  border-radius: 20px;
+  padding-bottom: 10%;
+  background-color: aqua;
+
+}
+
+.weather-selected-date {
+  font-size: 15px;
+  padding-left: 55%;
+  padding-top: 10px;
+  
+}
+
+.weather-now-temperature{
+  text-align: center;
+  text-wrap: wrap;
+  padding-left: 45px;
+  font-size: 130px;
+  margin: 0px;
+}
+.weather-conditions{
+  text-align: center;
+  font-size: 30px;
+  margin: 0px;
+  margin-bottom: 60px;
+}
+
+.weather-temperature-range{
+  position: absolute;
+  top: 140px;
+  right: 35%;
+  line-height: 30px;
+  /* background-color: red; */
+}
+.weather-week-info {
+  /* background-color: gray; */
+  margin-right: 50px;
+  margin-left: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 11px;
+}
+.weather-btn-other-days {
+  /* background-color: beige; */
+  /* border-color: gray; */
+ 
+  border-style:hidden;
+  border-radius: 10px;
+  padding: 2px;
+}
+.weather-btn-other-days:hover{
+  border-style:solid;
+  border-width: 1px;
+  padding: 1px;
+
+}
+.weather-btn-other-days:active {
+  transform: scale(0.95);
+}
+
+
+.weather-btn-date {
+  text-align: center;
+  margin: 0;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.weather-btn-temperature {
+  text-align: center;
+  font-size: 23px;
+  margin-right: 14px;
+  margin-left: 14px;
+  margin-top: 13px;
+  margin-bottom: 13px;
+}
+
+.weather-btn-summary-forecast {
+  text-align: center;
+  margin-top: 0px;
+  font-size: 13px;
+  opacity: 0.5;
+}
+
+@media (max-width: 556px) {
+  .weather-week-info {
+    justify-content: center;
+    gap: 5px;
+  }
+  .weather-selected-date {
+    padding-left: 61%;
+  }
+  .weather-temperature-range{
+    right: 10%;
+  }
+}
