@@ -1,4 +1,5 @@
 const CACHE_NAME = "Service Worker 0.0.5";
+const PROJECT_PATH = "Summer-s-eye-website";
 const ASSETS = [
     "/",
     "/index.html",
@@ -21,7 +22,7 @@ self.addEventListener("install", (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
             console.log("Caching assets...");
-            return cache.addAll(ASSETS);
+            return cache.addAll(PROJECT_PATH+ASSETS);
         })
     );
 });
