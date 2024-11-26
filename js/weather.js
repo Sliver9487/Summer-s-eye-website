@@ -101,7 +101,7 @@ function translateForecastToImg(malayForecast) {
     "Tiada hujan": "img/sun.png",
     "Hujan": "img/rainy.png",
     "Hujan di beberapa tempat": "img/showers.png",
-    "Hujan di satu dua tempat": "img/heavy-rain.png",
+    "Hujan di satu dua tempat": "img/heavy_rain.png",
     "Hujan di satu dua tempat di kawasan pantai": "img/rainy.png",
     "Hujan di satu dua tempat di kawasan pedalaman": "img/heavy-rain.png",
     "Ribut petir": "img/thunderstorm.png",
@@ -116,7 +116,7 @@ function translateForecastToImg(malayForecast) {
 
 //////////
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/Summer-s-eye-website/service-worker.js', {scope: '/Summer-s-eye-website/'})
+  navigator.serviceWorker.register('/service-worker.js')
     .then(function(registration) {
       console.log('Service Worker registered with scope:', registration.scope);
     })
