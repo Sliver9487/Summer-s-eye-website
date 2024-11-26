@@ -1,5 +1,4 @@
 const CACHE_NAME = "Service Worker 0.0.5";
-const PROJECT_PATH = "Summer-s-eye-website";
 const ASSETS = [
     "/",
     "/index.html",
@@ -17,13 +16,28 @@ const ASSETS = [
     "/img/icons/icon-512x512.png"
 ];
 
+const PROJECT_ASSETS = [
+    "Summer-s-eye-website/",
+    "Summer-s-eye-website/index.html",
+    "Summer-s-eye-website/index_style.css",
+    "Summer-s-eye-website/js/weather.js",
+    "Summer-s-eye-website/img/fog.png",
+    "Summer-s-eye-website/img/heavy-rain.png",
+    "Summer-s-eye-website/img/lightning.png",
+    "Summer-s-eye-website/img/rainy.png",
+    "Summer-s-eye-website/img/showers.png",
+    "Summer-s-eye-website/img/sun.png",
+    "Summer-s-eye-website/img/thunderstorm.png",
+    "Summer-s-eye-website/img/warning.png",
+    "Summer-s-eye-website/img/icons/icon-192x192.png",
+    "Summer-s-eye-website/img/icons/icon-512x512.png"
+];
 // 安裝事件：緩存所需資源
 self.addEventListener("install", (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
             console.log("Caching assets...");
-            const assetsWithPath = ASSETS.map(asset => PROJECT_PATH + asset);
-            return cache.addAll(assetsWithPath);
+            return cache.addAll(PROJECT_ASSETS);
         })
     );
 });
