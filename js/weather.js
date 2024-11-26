@@ -116,7 +116,7 @@ function translateForecastToImg(malayForecast) {
 
 //////////
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js')
+  navigator.serviceWorker.register('/Summer-s-eye-website/service-worker.js', {scope: '/Summer-s-eye-website/'})
     .then(function(registration) {
       console.log('Service Worker registered with scope:', registration.scope);
     })
