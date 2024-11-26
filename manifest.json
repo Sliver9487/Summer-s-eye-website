@@ -1,7 +1,7 @@
 {
   "name": "Weather Report",
   "short_name": "WeatherReport",
-  "start_url": "/index.html",
+  "start_url": "Summer-s-eye-website/index.html",
   "display": "fullscreen",
   "background_color": "#ffffff",
   "theme_color": "#000000",
