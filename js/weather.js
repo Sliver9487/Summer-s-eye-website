@@ -114,6 +114,16 @@ function translateForecastToImg(malayForecast) {
   return forecastTranslationImg[malayForecast] || "/img/warning.png";
 }
 
+//////////
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then(function(registration) {
+      console.log('Service Worker registered with scope:', registration.scope);
+    })
+    .catch(function(error) {
+      console.log('Service Worker registration failed:', error);
+    });
+}
 // 主流程：页面加载时初始化
 document.addEventListener("DOMContentLoaded", async () => {
   try {
@@ -138,12 +148,4 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js')
-    .then(function(registration) {
-      console.log('Service Worker registered with scope:', registration.scope);
-    })
-    .catch(function(error) {
-      console.log('Service Worker registration failed:', error);
-    });
-}
+
