@@ -22,7 +22,7 @@ self.addEventListener("install", (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
             console.log("Caching assets...");
-            return cache.addAll(PROJECT_PATH+ASSETS);
+            return cache.addAll(`${PROJECT_PATH+ASSETS}`);
         })
     );
 });
