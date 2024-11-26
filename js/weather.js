@@ -1,29 +1,12 @@
-// 获取天气数据函数（带缓存）
+// 获取天气数据函数
 async function ApiGetWeather(prefix) {
-  const cacheKey = `weatherData_${prefix}`;
-  const cacheTTL = 60 * 60 * 1000; // 缓存时间：1 小时
-
   try {
-    // 检查缓存
-    const cachedData = localStorage.getItem(cacheKey);
-    const cachedTime = localStorage.getItem(`${cacheKey}_time`);
-    const now = new Date().getTime();
-
-    if (cachedData && cachedTime && now - cachedTime < cacheTTL) {
-      console.log("Using cached weather data.");
-      return JSON.parse(cachedData);
-    }
-
     // 请求新数据
     const APIresponse = await fetch(`https://api.data.gov.my/weather/forecast?contains=${prefix}@location__location_name`, { method: "GET" });
     if (!APIresponse.ok) {
       throw new Error(`API get Error! StatusCode: ${APIresponse.status}`);
     }
-
     const data = await APIresponse.json();
-    // 缓存数据
-    localStorage.setItem(cacheKey, JSON.stringify(data));
-    localStorage.setItem(`${cacheKey}_time`, now.toString());
     return data;
   } catch (error) {
     console.error("Error fetching weather data:", error.message);
@@ -154,3 +137,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Error initializing weather info:", error.message);
   }
 });
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then(function(registration) {
+      console.log('Service Worker registered with scope:', registration.scope);
+    })
+    .catch(function(error) {
+      console.log('Service Worker registration failed:', error);
+    });
+}
